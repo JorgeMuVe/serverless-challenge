@@ -1,0 +1,107 @@
+service: serverless-challenge
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+  profile: serverless-user
+  lambdaHashingVersion: 20201221
+  iamRoleStatements:
+  - Effect: Allow
+    Action:
+      - dynamodb:*
+    Resource:
+      - arn:aws:dynamodb:us-east-1:822566447730:table/Empleado
+#     - { "Fn::GetAtt": ["Empleado", "Arn"] }
+
+resources:
+  Resources:
+    Empleado:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: Empleado
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+
+custom:
+  dynamodb:
+    stages:
+      - dev
+
+functions:
+  peliculasSwapi:
+    handler: src/functions/swapi/peliculas.buscarPeliculaLambda
+    events:
+      - http:
+          method: get
+          path: /peliculas/{id}
+  personasSwapi:
+    handler: src/functions/swapi/personas.buscarPersonaLambda
+    events:
+      - http:
+          method: get
+          path: /personas/{id}
+  planetasSwapi:
+    handler: src/functions/swapi/planetas.buscarPlanetaLambda
+    events:
+      - http:
+          method: get
+          path: /planetas/{id}      
+  especiesSwapi:
+    handler: src/functions/swapi/especies.buscarEspecieLambda
+    events:
+      - http:
+          method: get
+          path: /especies/{id}            
+  navesSwapi:
+    handler: src/functions/swapi/naves.buscarNaveLambda
+    events:
+      - http:
+          method: get
+          path: /naves/{id}
+  vehiculosSwapi:
+    handler: src/functions/swapi/vehiculos.buscarVehiculoLambda
+    events:
+      - http:
+          method: get
+          path: /vehiculos/{id}
+  crearEmpleado:
+    handler: src/functions/empleado/crear.crearEmpleadoLambda
+    events:
+      - http:
+          method: post
+          path: /empleados
+  listarEmpleado:
+    handler: src/functions/empleado/listar.listarEmpleadoLambda
+    events:
+      - http:
+          method: get
+          path: /empleados
+  buscarEmpleado:
+    handler: src/functions/empleado/buscar.buscarEmpleadoLambda
+    events:
+      - http:
+          method: get
+          path: /empleados/{id}
+  editarEmpleado:
+    handler: src/functions/empleado/editar.editarEmpleadoLambda
+    events:
+      - http:
+          method: put
+          path: /empleados/{id}
+  eliminarEmpleado:
+    handler: src/functions/empleado/eliminar.eliminarEmpleadoLambda
+    events:
+      - http:
+          method: delete
+          path: /empleados/{id}
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-dynamodb-local

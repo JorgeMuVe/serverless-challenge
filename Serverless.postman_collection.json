@@ -1,0 +1,299 @@
+{
+	"info": {
+		"_postman_id": "2ac27080-5b91-46d2-8a20-b5413b242ba7",
+		"name": "Serverless",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Empleado",
+			"item": [
+				{
+					"name": "Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://m9ovcz5kmj.execute-api.us-east-1.amazonaws.com/dev/empleados",
+							"protocol": "https",
+							"host": [
+								"m9ovcz5kmj",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"empleados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://m9ovcz5kmj.execute-api.us-east-1.amazonaws.com/dev/empleados/776df062-f0df-4f87-b8b2-5e29067c652c",
+							"protocol": "https",
+							"host": [
+								"m9ovcz5kmj",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"empleados",
+								"776df062-f0df-4f87-b8b2-5e29067c652c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dni\": \"72947621\",\r\n    \"email\": \"jkmvz5@gmail.com\",\r\n    \"nombres\": \"Jorge Muñiz\",\r\n    \"profesion\": \"Ingeniero de sistemas\",\r\n    \"experiencia\": \"5 Años\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://m9ovcz5kmj.execute-api.us-east-1.amazonaws.com/dev/empleados",
+							"protocol": "https",
+							"host": [
+								"m9ovcz5kmj",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"empleados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dni\": \"72947621\",\r\n    \"email\": \"jkmvz5@gmail.com\",\r\n    \"nombres\": \"Jorge Muñiz\",\r\n    \"profesion\": \"Ingeniero de sistemas\",\r\n    \"experiencia\": \"8 Años\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://m9ovcz5kmj.execute-api.us-east-1.amazonaws.com/dev/empleados/776df062-f0df-4f87-b8b2-5e29067c652c",
+							"protocol": "https",
+							"host": [
+								"m9ovcz5kmj",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"empleados",
+								"776df062-f0df-4f87-b8b2-5e29067c652c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://m9ovcz5kmj.execute-api.us-east-1.amazonaws.com/dev/empleados/c1c7112b-8caa-404b-975e-8fc543244695",
+							"protocol": "https",
+							"host": [
+								"m9ovcz5kmj",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"empleados",
+								"c1c7112b-8caa-404b-975e-8fc543244695"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Swapi",
+			"item": [
+				{
+					"name": "Vehiculo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://m9ovcz5kmj.execute-api.us-east-1.amazonaws.com/dev/vehiculos/6",
+							"protocol": "https",
+							"host": [
+								"m9ovcz5kmj",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"vehiculos",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Nave",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://m9ovcz5kmj.execute-api.us-east-1.amazonaws.com/dev/naves/2",
+							"protocol": "https",
+							"host": [
+								"m9ovcz5kmj",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"naves",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Especie",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://m9ovcz5kmj.execute-api.us-east-1.amazonaws.com/dev/especies/6",
+							"protocol": "https",
+							"host": [
+								"m9ovcz5kmj",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"especies",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Persona",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://m9ovcz5kmj.execute-api.us-east-1.amazonaws.com/dev/personas/6",
+							"protocol": "https",
+							"host": [
+								"m9ovcz5kmj",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"personas",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pelicula",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://m9ovcz5kmj.execute-api.us-east-1.amazonaws.com/dev/peliculas/6",
+							"protocol": "https",
+							"host": [
+								"m9ovcz5kmj",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"peliculas",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Planeta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://m9ovcz5kmj.execute-api.us-east-1.amazonaws.com/dev/planetas/6",
+							"protocol": "https",
+							"host": [
+								"m9ovcz5kmj",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"planetas",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
